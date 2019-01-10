@@ -7,7 +7,7 @@ class ShoppingFlowTest < ActionDispatch::IntegrationTest
 
     assert_difference "Cart.count", 1 do
       assert_difference "CartItem.count", 1 do
-      post api_v1_cart_items_path, params: { product_id: banana.id, quantity: 2}
+        post api_v1_cart_items_path, params: { product_id: banana.id, quantity: 2}
       end
     end
 
