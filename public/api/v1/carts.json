@@ -5,32 +5,6 @@
   "resourcePath": "carts",
   "apis": [
     {
-      "path": "/api/v1/carts/{id}/checkout",
-      "operations": [
-        {
-          "summary": "Checkout a Cart",
-          "responseMessages": [
-            {
-              "code": 200,
-              "responseModel": null,
-              "message": "Ok"
-            }
-          ],
-          "parameters": [
-            {
-              "paramType": "path",
-              "name": "id",
-              "type": "integer",
-              "description": "Cart Id",
-              "required": true
-            }
-          ],
-          "nickname": "Api::V1::Carts#checkout",
-          "method": "post"
-        }
-      ]
-    },
-    {
       "path": "/api/v1/carts/{id}",
       "operations": [
         {
@@ -53,6 +27,32 @@
           ],
           "nickname": "Api::V1::Carts#show",
           "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/carts/{id}/checkout",
+      "operations": [
+        {
+          "summary": "Checkout a Cart",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Cart Id",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Carts#checkout",
+          "method": "post"
         }
       ]
     }

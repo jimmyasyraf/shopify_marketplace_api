@@ -5,44 +5,6 @@
   "resourcePath": "products",
   "apis": [
     {
-      "path": "/api/v1/products/{id}/restock",
-      "operations": [
-        {
-          "summary": "Restock Product inventory",
-          "responseMessages": [
-            {
-              "code": 200,
-              "responseModel": null,
-              "message": "Ok"
-            },
-            {
-              "code": 422,
-              "responseModel": null,
-              "message": "Unprocessable Entity"
-            }
-          ],
-          "parameters": [
-            {
-              "paramType": "path",
-              "name": "id",
-              "type": "integer",
-              "description": "Product id",
-              "required": true
-            },
-            {
-              "paramType": "form",
-              "name": "amount",
-              "type": "integer",
-              "description": "Amount",
-              "required": true
-            }
-          ],
-          "nickname": "Api::V1::Products#restock",
-          "method": "post"
-        }
-      ]
-    },
-    {
       "path": "/api/v1/products",
       "operations": [
         {
@@ -128,6 +90,44 @@
           ],
           "nickname": "Api::V1::Products#show",
           "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/products/{id}/restock",
+      "operations": [
+        {
+          "summary": "Restock Product inventory",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Product id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "amount",
+              "type": "integer",
+              "description": "Amount",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Products#restock",
+          "method": "post"
         }
       ]
     }
