@@ -33,7 +33,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     product = products(:apple)
 
     assert_equal product.inventory_count, 20
-    get restock_api_v1_product_path(product), params: { amount: 10}
+    post restock_api_v1_product_path(product), params: { amount: 10}
 
     product.reload
     assert_equal product.inventory_count, 30

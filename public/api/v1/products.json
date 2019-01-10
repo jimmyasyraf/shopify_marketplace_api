@@ -1,0 +1,136 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "products",
+  "apis": [
+    {
+      "path": "/api/v1/products",
+      "operations": [
+        {
+          "summary": "Fetches all Products",
+          "notes": "This lists all products that are in stock",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            }
+          ],
+          "nickname": "Api::V1::Products#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/products",
+      "operations": [
+        {
+          "summary": "Creates a new Product",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "price",
+              "type": "float",
+              "description": "Price",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "inventory_count",
+              "type": "integer",
+              "description": "Inventory count",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Products#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/products/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Product",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Product Id",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Products#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/products/{id}/restock",
+      "operations": [
+        {
+          "summary": "Restock Product inventory",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Product id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "amount",
+              "type": "integer",
+              "description": "Amount",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Products#restock",
+          "method": "post"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
