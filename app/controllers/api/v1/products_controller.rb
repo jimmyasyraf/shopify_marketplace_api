@@ -1,5 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
-  swagger_controller :products, "Product Shopping"
+  swagger_controller :products, "Products"
 
   swagger_api :index do
     summary "Fetches all Products"

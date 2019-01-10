@@ -2,13 +2,13 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
   "basePath": "http://localhost:3000",
-  "resourcePath": "products",
+  "resourcePath": "cart_items",
   "apis": [
     {
-      "path": "/api/v1/products/{id}/restock",
+      "path": "/api/v1/cart_items",
       "operations": [
         {
-          "summary": "Restock Product inventory",
+          "summary": "Add new item to cart",
           "responseMessages": [
             {
               "code": 200,
@@ -23,48 +23,37 @@
           ],
           "parameters": [
             {
-              "paramType": "path",
-              "name": "id",
+              "paramType": "form",
+              "name": "cart_id",
               "type": "integer",
+              "description": "Existing cart id. Leave empty to create a new cart",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "product_id",
+              "type": "string",
               "description": "Product id",
               "required": true
             },
             {
               "paramType": "form",
-              "name": "amount",
+              "name": "quantity",
               "type": "integer",
-              "description": "Amount",
+              "description": "Item quantity",
               "required": true
             }
           ],
-          "nickname": "Api::V1::Products#restock",
+          "nickname": "Api::V1::CartItems#create",
           "method": "post"
         }
       ]
     },
     {
-      "path": "/api/v1/products",
+      "path": "/api/v1/cart_items/{id}",
       "operations": [
         {
-          "summary": "Fetches all Products",
-          "notes": "This lists all products that are in stock",
-          "responseMessages": [
-            {
-              "code": 200,
-              "responseModel": null,
-              "message": "Ok"
-            }
-          ],
-          "nickname": "Api::V1::Products#index",
-          "method": "get"
-        }
-      ]
-    },
-    {
-      "path": "/api/v1/products",
-      "operations": [
-        {
-          "summary": "Creates a new Product",
+          "summary": "Edit item quantity",
           "responseMessages": [
             {
               "code": 200,
@@ -79,42 +68,47 @@
           ],
           "parameters": [
             {
-              "paramType": "form",
-              "name": "title",
-              "type": "string",
-              "description": "Title",
-              "required": true
-            },
-            {
-              "paramType": "form",
-              "name": "price",
-              "type": "float",
-              "description": "Price",
-              "required": true
-            },
-            {
-              "paramType": "form",
-              "name": "inventory_count",
+              "paramType": "path",
+              "name": "id",
               "type": "integer",
-              "description": "Inventory count",
+              "description": "Item id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "cart_id",
+              "type": "integer",
+              "description": "Existing cart id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quantity",
+              "type": "integer",
+              "description": "Item quantity",
               "required": true
             }
           ],
-          "nickname": "Api::V1::Products#create",
-          "method": "post"
+          "nickname": "Api::V1::CartItems#update",
+          "method": "patch"
         }
       ]
     },
     {
-      "path": "/api/v1/products/{id}",
+      "path": "/api/v1/cart_items/{id}",
       "operations": [
         {
-          "summary": "Fetches a single Product",
+          "summary": "Remove item from cart",
           "responseMessages": [
             {
               "code": 200,
               "responseModel": null,
               "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
             }
           ],
           "parameters": [
@@ -122,12 +116,19 @@
               "paramType": "path",
               "name": "id",
               "type": "integer",
-              "description": "Product Id",
+              "description": "Item id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "cart_id",
+              "type": "integer",
+              "description": "Existing cart id",
               "required": true
             }
           ],
-          "nickname": "Api::V1::Products#show",
-          "method": "get"
+          "nickname": "Api::V1::CartItems#destroy",
+          "method": "delete"
         }
       ]
     }

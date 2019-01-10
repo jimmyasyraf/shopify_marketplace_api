@@ -5,7 +5,15 @@
   "apis": [
     {
       "path": "/api/v1/products.{format}",
-      "description": "Product Shopping"
+      "description": "Products"
+    },
+    {
+      "path": "/api/v1/carts.{format}",
+      "description": "Shopping cart"
+    },
+    {
+      "path": "/api/v1/cart_items.{format}",
+      "description": "Shopping cart items"
     }
   ],
   "authorizations": null,
