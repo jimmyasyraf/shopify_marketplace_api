@@ -1,14 +1,14 @@
 apple:
   title: Apple
-  price: 1.00
+  price: 0.99
   inventory_count: 20
 
 banana:
   title: Banana
-  price: 2.00
+  price: 1.89
   inventory_count: 10
 
 pear:
   title: Banana
-  price: 3.00
+  price: 2.99
   inventory_count: 0

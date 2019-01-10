@@ -8,6 +8,10 @@ Rails.application.routes.draw do
           post :restock
         end
       end
+
+      resources :carts, only: [:show]
+
+      resources :cart_items, only: [:create, :update, :destroy]
     end
   end
 end
