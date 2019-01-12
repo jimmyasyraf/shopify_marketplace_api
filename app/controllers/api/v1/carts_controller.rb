@@ -5,12 +5,14 @@ class Api::V1::CartsController < ApplicationController
     summary "Fetches a single Cart"
     param :path, :id, :integer, :required, "Cart Id"
     response :success
+    response :internal_server_error
   end
 
   swagger_api :checkout do
     summary "Checkout a Cart"
     param :path, :id, :integer, :required, "Cart Id"
     response :success
+    response :internal_server_error
   end
 
   def show
