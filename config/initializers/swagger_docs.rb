@@ -5,7 +5,7 @@ Swagger::Docs::Config.register_apis({
     # the output location where your .json files are written to
     :api_file_path => "public/",
     # the URL base path to your API
-    :base_path => "http://localhost:3000",
+    :base_path => "http://shopify-marketplace-api-staging-2037944263.us-east-1.elb.amazonaws.com",
     # if you want to delete all .json files at each generation
     :clean_directory => true,
     # Ability to setup base controller for each api version. Api::V1::SomeController for example.
