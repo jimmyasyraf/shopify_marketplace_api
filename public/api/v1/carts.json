@@ -14,6 +14,11 @@
               "code": 200,
               "responseModel": null,
               "message": "Ok"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal Server Error"
             }
           ],
           "parameters": [
@@ -40,6 +45,11 @@
               "code": 200,
               "responseModel": null,
               "message": "Ok"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal Server Error"
             }
           ],
           "parameters": [

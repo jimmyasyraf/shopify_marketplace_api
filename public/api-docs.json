@@ -8,12 +8,12 @@
       "description": "Products"
     },
     {
-      "path": "/api/v1/carts.{format}",
-      "description": "Shopping cart"
-    },
-    {
       "path": "/api/v1/cart_items.{format}",
       "description": "Shopping cart items"
+    },
+    {
+      "path": "/api/v1/carts.{format}",
+      "description": "Shopping cart"
     }
   ],
   "authorizations": null,

@@ -5,12 +5,14 @@ class Api::V1::ProductsController < ApplicationController
     summary "Fetches all Products"
     notes "This lists all products that are in stock"
     response :success
+    response :internal_server_error
   end
 
   swagger_api :show do
     summary "Fetches a single Product"
     param :path, :id, :integer, :required, "Product Id"
     response :success
+    response :internal_server_error
   end
 
   swagger_api :create do
@@ -20,6 +22,7 @@ class Api::V1::ProductsController < ApplicationController
     param :form, :inventory_count, :integer, :required, "Inventory count"
     response :success
     response :unprocessable_entity
+    response :internal_server_error
   end
 
   swagger_api :restock do
@@ -28,6 +31,7 @@ class Api::V1::ProductsController < ApplicationController
     param :form, :amount, :integer, :required, "Amount"
     response :success
     response :unprocessable_entity
+    response :internal_server_error
   end
 
 

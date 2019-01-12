@@ -8,6 +8,7 @@ class Api::V1::CartItemsController < ApplicationController
     param :form, :quantity, :integer, :required, "Item quantity"
     response :success
     response :unprocessable_entity
+    response :internal_server_error
   end
 
   swagger_api :update do
@@ -17,6 +18,7 @@ class Api::V1::CartItemsController < ApplicationController
     param :form, :quantity, :integer, :required, "Item quantity"
     response :success
     response :unprocessable_entity
+    response :internal_server_error
   end
 
   swagger_api :destroy do
@@ -25,6 +27,7 @@ class Api::V1::CartItemsController < ApplicationController
     param :form, :cart_id, :integer, :required, "Existing cart id"
     response :success
     response :unprocessable_entity
+    response :internal_server_error
   end
 
   def create
